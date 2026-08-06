@@ -1,11 +1,11 @@
 # India Market AI
 
-A DealSize-style AI prototype for the Indian market. The app combines:
+A Stock Market Agentic AI prototype for the Indian market. The app combines:
 
 - A Google Sheet index of company fundamental documents.
 - Yahoo Finance technical data via `yfinance`.
 - A LangGraph backend orchestration layer.
-- Gemini for text and image-aware responses.
+- Groq for text and image-aware responses.
 - A chat interface with image/file attachment affordances.
 
 ## Setup
@@ -18,10 +18,12 @@ Copy-Item .env.example .env
 Edit `backend/.env` and set:
 
 ```text
-GEMINI_API_KEY=your-gemini-api-key
-GEMINI_MODEL=gemini-2.5-flash
-GEMINI_MAX_OUTPUT_TOKENS=8192
-GOOGLE_APPLICATION_CREDENTIALS=C:\path\to\service-account.json
+GROQ_MODEL=qwen/qwen3.6-27b
+GROQ_MAX_TOKENS=1024
+FUNDAMENTALS_CONTEXT_CHARS=6000
+HISTORY_MESSAGE_CHARS=600
+GROQ_API_KEY=your-groq-api-key
+GOOGLE_APPLICATION_CREDENTIALS=your-finance-agent.json
 ```
 
 Install and run the backend:
